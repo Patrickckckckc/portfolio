@@ -1,0 +1,284 @@
+.profile-page {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: max(100svh, 740px);
+  align-items: center;
+  padding: clamp(132px, 17vh, 168px) var(--gutter) clamp(96px, 12vh, 128px);
+  background-color: var(--background);
+}
+
+.profile-page::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image:
+    linear-gradient(
+      color-mix(in srgb, var(--foreground) 5%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--foreground) 5%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 32px 32px;
+  content: "";
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 12%,
+    #000 88%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+.profile-grid {
+  display: grid;
+  width: min(100%, 1280px);
+  grid-template-columns: minmax(0, 0.96fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(44px, 7vw, 112px);
+  margin-inline: auto;
+}
+
+.profile-photo-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.06;
+  margin: 0;
+}
+
+.profile-photo-button {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.profile-photo-button:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 9px;
+}
+
+.profile-photo-card {
+  position: absolute;
+  display: block;
+  padding: clamp(6px, 0.85vw, 10px);
+  background: var(--card);
+  box-shadow:
+    0 26px 52px -30px rgb(0 0 0 / 48%),
+    0 3px 8px rgb(0 0 0 / 9%);
+}
+
+.profile-photo-primary {
+  z-index: 2;
+  top: 12%;
+  left: 5%;
+  width: 57%;
+  height: 80%;
+  transform: rotate(-5deg);
+  transition: transform 700ms var(--ease-brand);
+}
+
+.profile-photo-secondary {
+  z-index: 1;
+  top: 5%;
+  left: 43%;
+  width: 51%;
+  height: 76%;
+  opacity: 0;
+  transform: translate(5%, -2%) rotate(5deg) scale(0.96);
+  transition:
+    opacity 650ms var(--ease-brand),
+    transform 800ms var(--ease-brand);
+}
+
+.profile-photo-window {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.profile-photo-image {
+  object-fit: cover;
+  clip-path: polygon(1.5% 0, 100% 1.5%, 98.5% 100%, 0 98.5%);
+}
+
+.profile-photo-button:focus-visible .profile-photo-secondary,
+.profile-photo-revealed .profile-photo-secondary {
+  opacity: 1;
+  transform: translate(0, 0) rotate(5deg) scale(1);
+}
+
+.profile-photo-button:focus-visible .profile-photo-primary,
+.profile-photo-revealed .profile-photo-primary {
+  transform: translateX(-1%) rotate(-7deg);
+}
+
+@media (hover: hover) {
+  .profile-photo-button:hover .profile-photo-secondary {
+    opacity: 1;
+    transform: translate(0, 0) rotate(5deg) scale(1);
+  }
+
+  .profile-photo-button:hover .profile-photo-primary {
+    transform: translateX(-1%) rotate(-7deg);
+  }
+}
+
+.profile-copy {
+  width: 100%;
+  max-width: 620px;
+}
+
+.profile-title {
+  margin: 0 0 clamp(16px, 2vw, 24px);
+  font-size: clamp(38px, 4.3vw, 62px);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.profile-biography {
+  display: grid;
+  gap: clamp(14px, 1.4vw, 19px);
+  color: color-mix(in srgb, var(--foreground) 84%, transparent);
+  font-size: clamp(15px, 1.08vw, 17px);
+  line-height: 1.68;
+}
+
+.profile-biography p,
+.profile-note p {
+  margin: 0;
+}
+
+.profile-notes {
+  display: grid;
+  gap: 9px;
+  margin-top: clamp(20px, 2.4vw, 30px);
+}
+
+.profile-note {
+  padding: clamp(15px, 1.7vw, 20px) clamp(17px, 2vw, 24px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--card) 94%, transparent);
+  box-shadow: 0 16px 36px -30px rgb(0 0 0 / 32%);
+}
+
+.profile-file-name {
+  margin: 0 0 7px;
+  color: var(--muted-foreground);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.profile-note p {
+  color: color-mix(in srgb, var(--foreground) 84%, transparent);
+  font-size: clamp(14px, 1vw, 16px);
+  line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+  .profile-page {
+    min-height: max(100svh, 900px);
+    padding-top: clamp(128px, 15vh, 148px);
+    padding-bottom: 110px;
+  }
+
+  .profile-grid {
+    width: min(100%, 680px);
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(28px, 5vw, 44px);
+  }
+
+  .profile-photo-stage {
+    width: min(100%, 480px);
+    aspect-ratio: 1 / 0.9;
+    margin-inline: auto;
+  }
+
+  .profile-photo-primary {
+    top: 7%;
+    left: 8%;
+    width: 53%;
+    height: 86%;
+  }
+
+  .profile-photo-secondary {
+    top: 2%;
+    left: 44%;
+    width: 47%;
+    height: 82%;
+  }
+
+  .profile-copy {
+    max-width: none;
+  }
+
+  .profile-title {
+    font-size: clamp(38px, 7vw, 54px);
+  }
+}
+
+@media (max-width: 560px) {
+  .profile-page {
+    min-height: 100svh;
+    padding-top: 116px;
+    padding-bottom: 96px;
+  }
+
+  .profile-grid {
+    gap: 28px;
+  }
+
+  .profile-photo-stage {
+    width: 100%;
+    aspect-ratio: 1 / 0.92;
+  }
+
+  .profile-photo-card {
+    padding: 6px;
+  }
+
+  .profile-photo-primary {
+    left: 4%;
+    width: 58%;
+    height: 84%;
+  }
+
+  .profile-photo-secondary {
+    left: 42%;
+    width: 54%;
+    height: 77%;
+  }
+
+  .profile-biography {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .profile-notes {
+    margin-top: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-photo-primary,
+  .profile-photo-secondary {
+    transition: none;
+  }
+}

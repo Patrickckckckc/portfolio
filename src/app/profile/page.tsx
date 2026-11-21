@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
 
-import { PlaceholderPage } from "@/components/sections/placeholder-page";
+import { ProfileContent } from "./profile-content";
+import "./profile-page.css";
 
-export const metadata: Metadata = { title: "Profile" };
+export const metadata: Metadata = {
+  title: "About Me",
+  description:
+    "Learn about Patrick Wackerbauer's background, interests, and approach to software engineering.",
+};
 
 export default function ProfilePage() {
-  return <PlaceholderPage slug="profile" />;
+  return <ProfileContent />;
 }
