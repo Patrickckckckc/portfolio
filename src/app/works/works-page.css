@@ -20,7 +20,7 @@
 
 .works-grid {
   display: grid;
-  width: min(100%, 1384px);
+  width: min(100%, 1240px);
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(18px, 2vw, 28px);
   margin-inline: auto;
