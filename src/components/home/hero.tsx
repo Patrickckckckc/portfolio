@@ -25,10 +25,7 @@ export function Hero() {
         </p>
         <HeroHeadline />
         <Swoosh />
-        <p
-          data-intro
-          className={`${eyebrow} mt-[clamp(8px,1.2vw,14px)] text-muted-foreground`}
-        >
+        <p data-intro className={`${eyebrow} mt-[clamp(8px,1.2vw,14px)]`}>
           <LeafDot />
           <span>{t.hero.role}</span>
         </p>

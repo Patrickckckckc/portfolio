@@ -42,7 +42,7 @@ export const dictionaries: Record<Language, Dictionary> = {
     hero: {
       greeting: "Hi, I'm Patrick Wackerbauer",
       headline: ["Building", "Software", "That Solves", "Real Problems"],
-      role: "Software Engineering",
+      role: "Software Engineer",
       sectionsLabel: "Sections",
     },
     sections: {
@@ -76,8 +76,8 @@ export const dictionaries: Record<Language, Dictionary> = {
     },
     hero: {
       greeting: "Hola, soy Patrick Wackerbauer",
-      headline: ["Construyo", "software", "que resuelve", "problemas reales"],
-      role: "Ingeniería de Software",
+      headline: ["Construyo", "Software", "Que Resuelve", "Problemas Reales"],
+      role: "Ingeniero de Software",
       sectionsLabel: "Secciones",
     },
     sections: {

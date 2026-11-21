@@ -52,6 +52,7 @@ export function Intro() {
       const scale = Math.min(vw * 0.62, 440) / r.width;
 
       gsap.set(sig, {
+        visibility: "visible",
         width: r.width,
         height: r.height,
         x: (vw - r.width * scale) / 2,
@@ -148,6 +149,7 @@ export function Intro() {
     >
       <div
         ref={logoRef}
+        data-intro-source
         className="absolute top-0 left-0 origin-top-left will-change-transform"
         style={{ aspectRatio: LOGO_ASPECT }}
       >

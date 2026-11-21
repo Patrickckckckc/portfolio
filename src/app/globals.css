@@ -173,6 +173,9 @@ html[lang="es"] {
 html.intro-pending .intro-layer {
   display: block;
 }
+html.intro-pending .intro-layer [data-intro-source] {
+  visibility: hidden;
+}
 html.intro-pending [data-intro],
 html.intro-pending [data-word] {
   opacity: 0;
@@ -183,6 +186,10 @@ html.intro-pending [data-intro="swoosh"] {
 }
 html.intro-pending .page-in {
   animation: none;
+}
+
+html.intro-pending [data-site-logo] {
+  opacity: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
