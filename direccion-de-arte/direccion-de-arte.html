@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Patrick Wackerbauer — Art direction sample (not published)</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Inter+Tight:wght@300;400;500&display=swap" rel="stylesheet">
+<script>
+  document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+  // Safety net: if anything stalls, show everything after 6 s
+  setTimeout(function () { document.documentElement.classList.add('ready'); }, 6000);
+</script>
+<style>
+/* ============ TOKENS ============ */
+:root{
+  /* Colour: black and white only, the video brings the grey */
+  --bg:#FFFFFF;
+  --ink:#0A0A0A;
+  --muted:#595959;
+  --line:rgba(10,10,10,.16);
+  --line-strong:rgba(10,10,10,.5);
+  --dock:rgba(255,255,255,.88);
+  --placeholder:#FFE15C;
+
+  --font-display:"Inter Tight",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"Geist Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+
+  /* Shape: everything is round and hairline, like the signature */
+  --r-pill:999px;
+  --r-lg:28px;
+  --hair:1px;
+  --slant:-12deg;
+
+  /* Motion: calm, precise, no bounce */
+  --ease:cubic-bezier(.22,1,.36,1);
+  --ease-io:cubic-bezier(.65,0,.35,1);
+  --dur:1.2s;
+  --dist:28px;
+  --t-hover:.5s;
+
+  --gutter:clamp(20px,4.4vw,72px);
+  --h1:15.2vw;
+}
+html[lang="es"]{--h1:11vw}
+@media (min-width:600px){ :root{--h1:11vw} html[lang="es"]{--h1:9.8vw} }
+@media (min-width:1024px){ :root{--h1:min(8vw,200px)} html[lang="es"]{--h1:min(6.6vw,168px)} }
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-display);font-weight:400;line-height:1.5;overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--ink);outline-offset:4px;border-radius:6px}
+.mono{font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:400}
+
+/* ============ SHEET BANNER ============ */
+.sheet-note{display:inline-block;margin:0 var(--gutter) 28px;font:500 10px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:var(--hair) solid var(--line);border-radius:var(--r-pill);padding:7px 12px}
+
+/* ============ HERO (real front page) ============ */
+/* HERO:start */
+.hero{position:relative;min-height:100svh;min-height:max(100svh,640px);display:flex;flex-direction:column;isolation:isolate;overflow:clip}
+.hero__bg{position:absolute;inset:0;z-index:-2;background:#e9e9e9}
+.hero__bg video,.hero__bg img{width:100%;height:100%;object-fit:cover;object-position:36% 55%;display:block}
+.hero__veil{position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,.7) 0%,rgba(255,255,255,.2) 28%,rgba(255,255,255,0) 55%,rgba(255,255,255,.35) 100%)}
+
+.top{display:flex;align-items:center;justify-content:space-between;padding:clamp(14px,2.2vw,28px) var(--gutter) 0}
+.top__logo{display:block;width:clamp(96px,9vw,132px);aspect-ratio:635/395;margin-left:-6px}
+.top__logo img{display:block;width:100%;height:100%}
+.nav{display:flex;gap:clamp(4px,1.6vw,22px)}
+.nav a{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:0 clamp(6px,.9vw,10px);font-size:clamp(11px,.95vw,13px)}
+.nav a::after,.dock__item::after{content:"";position:absolute;left:clamp(6px,.9vw,10px);right:clamp(6px,.9vw,10px);bottom:10px;height:var(--hair);background:var(--ink);transform:scaleX(0);transform-origin:0 50%;transition:transform var(--t-hover) var(--ease)}
+.nav a:hover::after,.nav a:focus-visible::after{transform:scaleX(1)}
+
+.hero__main{flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 var(--gutter);padding-bottom:clamp(100px,16vh,170px);margin-top:clamp(-30px,-2vh,0px)}
+.eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 clamp(14px,2.2vw,28px);color:var(--ink);font-size:clamp(11px,1vw,13px)}
+.lens-dot{display:inline-block;width:14px;height:5px;border-radius:50%;background:var(--ink);transform:rotate(-14deg)}
+h1.hl{margin:0;font-weight:300;font-size:var(--h1);line-height:.98;letter-spacing:-.045em}
+.hl .w{display:block;will-change:transform,opacity}
+@media (min-width:600px){ .hl .w--a,.hl .w--b{display:inline-block} }
+.hl .lb{display:none}
+@media (min-width:1024px){ .hl .w{display:inline-block} .hl .lb{display:inline} }
+.swoosh{display:block;width:calc(100% + var(--gutter));height:clamp(24px,3.2vw,42px);margin:clamp(14px,2vw,26px) 0 0 calc(var(--gutter) * -1);overflow:visible}
+.swoosh path{fill:var(--ink)}
+.caption{display:flex;align-items:center;gap:10px;margin:clamp(8px,1.2vw,14px) 0 0;color:var(--muted);font-size:clamp(11px,1vw,13px)}
+
+.dock-wrap{position:absolute;left:0;right:0;bottom:clamp(54px,7vh,74px);display:flex;justify-content:center;padding:0 var(--gutter);pointer-events:none}
+.dock{pointer-events:auto;display:grid;grid-template-columns:repeat(3,1fr);width:100%;max-width:760px;background:var(--dock);border:var(--hair) solid var(--line);border-radius:var(--r-pill);box-shadow:0 30px 60px -28px rgba(10,10,10,.35),0 2px 6px rgba(10,10,10,.05)}
+.dock__item{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:clamp(12px,1.5vw,20px) 8px;min-height:64px;transition:transform var(--t-hover) var(--ease)}
+.dock__item+.dock__item{border-left:var(--hair) solid var(--line)}
+.dock__item::after{left:28%;right:28%;bottom:10px}
+.dock__n{font:400 10px/1 var(--font-mono);letter-spacing:.14em;color:var(--muted)}
+.dock__label{font-weight:400;font-size:clamp(15px,1.75vw,26px);letter-spacing:.06em;text-transform:uppercase;line-height:1.1}
+.dock__arrow{position:absolute;top:12px;right:16px;width:12px;height:12px;opacity:0;transform:translate(-4px,4px);transition:opacity var(--t-hover) var(--ease),transform var(--t-hover) var(--ease)}
+.dock__arrow path{fill:none;stroke:var(--ink);stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round}
+.dock__item:hover,.dock__item:focus-visible{transform:translate(2px,-3px)}
+.dock__item:hover::after,.dock__item:focus-visible::after{transform:scaleX(1)}
+.dock__item:hover .dock__arrow,.dock__item:focus-visible .dock__arrow{opacity:1;transform:none}
+@media (max-width:599px){ .dock__arrow{display:none} .dock__item{min-height:68px} .dock__label{letter-spacing:.04em} }
+
+.base{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-between;padding:0 var(--gutter);height:clamp(44px,6vh,56px);color:var(--muted);font-size:11px}
+.lang{display:inline-flex;align-items:center}
+.lang button{min-height:44px;min-width:36px;color:var(--muted);letter-spacing:.14em;font:inherit;text-transform:uppercase;position:relative}
+.lang button[aria-pressed="true"]{color:var(--ink)}
+.lang button[aria-pressed="true"]::after{content:"";position:absolute;left:0;right:0;bottom:11px;height:var(--hair);background:var(--ink)}
+.lang span{padding:0 2px}
+/* HERO:end */
+
+/* Hidden start states live only under .js, with the safety net */
+.js:not(.ready) [data-in]{opacity:0}
+.js:not(.ready) .hl .w{opacity:0}
+.js .swoosh{clip-path:inset(0 100% 0 0)}
+.js.ready .swoosh{clip-path:none}
+.js .top__logo{opacity:0}
+.js.ready .top__logo{opacity:1}
+
+/* INTRO:start */
+.intro{display:none}
+.js .intro{display:block;position:fixed;inset:0;z-index:50;background:#fff;cursor:pointer}
+.js.ready .intro,.intro.is-done{display:none}
+.intro__logo{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform,clip-path}
+.intro__logo img{display:block;width:100%;height:100%}
+.intro__skip{position:absolute;left:50%;bottom:calc(22px + env(safe-area-inset-bottom));transform:translateX(-50%);color:var(--muted);font-size:10px}
+/* INTRO:end */
+
+/* ============ SHEET SECTIONS ============ */
+.sheet{padding:clamp(72px,10vw,140px) var(--gutter);border-top:var(--hair) solid var(--line)}
+.sheet__inner{max-width:1180px;margin:0 auto}
+.sheet h2{margin:0 0 8px;font-weight:300;font-size:clamp(30px,4.4vw,56px);letter-spacing:-.035em;line-height:1.05}
+.sheet__lead{margin:0 0 clamp(28px,4vw,56px);max-width:56ch;color:var(--muted)}
+.swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.sw{border:var(--hair) solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:#fff}
+.sw__chip{height:120px;border-bottom:var(--hair) solid var(--line)}
+.sw__txt{padding:16px 18px 20px}
+.sw__txt b{display:block;font-weight:500}
+.sw__txt .mono{display:block;margin:2px 0 8px;color:var(--muted);font-size:11px}
+.sw__txt p{margin:0;font-size:15px;color:var(--muted)}
+.type{display:grid;gap:28px}
+.type__big{font-weight:300;font-size:clamp(44px,9vw,110px);line-height:.98;letter-spacing:-.045em;margin:0}
+.type__row{display:grid;gap:10px;padding-top:20px;border-top:var(--hair) solid var(--line)}
+.type__row h3{margin:0;font-weight:400;font-size:clamp(22px,2.6vw,34px);letter-spacing:-.02em}
+.type__row p{margin:0;max-width:60ch}
+.els{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.el{border:var(--hair) solid var(--line);border-radius:var(--r-lg);padding:22px 22px 24px;display:flex;flex-direction:column;gap:14px;background:#fff}
+.el__art{display:flex;align-items:center;min-height:92px}
+.el p{margin:0;font-size:15px;color:var(--muted)}
+.el b{font-weight:500;color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 24px;border:var(--hair) solid var(--ink);border-radius:var(--r-pill);background:var(--ink);color:#fff;font-size:12px;position:relative;overflow:hidden;transition:transform var(--t-hover) var(--ease),background var(--t-hover) var(--ease),color var(--t-hover) var(--ease)}
+.btn:hover{background:#fff;color:var(--ink);transform:translate(2px,-2px)}
+.btn:active{transform:scale(.97)}
+.btn--ghost{background:transparent;color:var(--ink)}
+.btn--ghost:hover{background:var(--ink);color:#fff}
+.btnrow{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.card{max-width:420px;border:var(--hair) solid var(--line);border-radius:var(--r-lg);padding:26px;background:#fff;box-shadow:0 30px 60px -34px rgba(10,10,10,.3);transition:transform var(--t-hover) var(--ease)}
+.card:hover{transform:translateY(-4px)}
+.card h3{margin:14px 0 8px;font-weight:400;font-size:26px;letter-spacing:-.025em}
+.card p{margin:0 0 18px;color:var(--muted)}
+.ph{background:var(--placeholder);color:#000;padding:0 4px;border-radius:3px;font-family:var(--font-mono);font-size:.82em}
+.card .swoosh{width:100%;margin:0;height:22px}
+.foot{padding:48px var(--gutter) 90px;border-top:var(--hair) solid var(--line);color:var(--muted);font-size:14px}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO:start -->
+<header class="hero" id="hero">
+  <div class="hero__bg" aria-hidden="true">
+    <video id="bgvideo" autoplay muted loop playsinline preload="metadata" poster="media/poster.webp">
+      <source src="media/fondo.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero__veil"></div>
+
+  <div class="top">
+    <a class="top__logo" id="toplogo" href="#hero" aria-label="Patrick Wackerbauer — home"><img src="media/logo.svg" alt="Patrick"></a>
+    <nav class="nav mono" aria-label="Main" data-in>
+      <a href="https://github.com/Patrickckckckc" target="_blank" rel="noopener" data-i18n="github">GitHub</a>
+      <a href="mailto:josepatrickwackerbauer@gmail.com" data-i18n="email">Email</a>
+      <a href="media/resume-en.pdf" id="resumeLink" target="_blank" rel="noopener" data-i18n="resume">Resume</a>
+    </nav>
+  </div>
+
+  <div class="hero__main">
+    <p class="eyebrow mono" data-in><i class="lens-dot"></i><span data-i18n="hello">Hi, I'm Patrick Wackerbauer</span></p>
+    <h1 class="hl" aria-label="Building Software That Solves Real Problems">
+      <span class="w w--a" data-i18n="w1">Building</span> <span class="w w--b" data-i18n="w2">Software</span><br class="lb">
+      <span class="w w--c" data-i18n="w3">That Solves</span> <span class="w w--d" data-i18n="w4">Real Problems</span>
+    </h1>
+    <svg class="swoosh" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path d="M0,37 C280,33 640,14 1000,2 C640,15.6 280,36.8 0,37 Z"/>
+    </svg>
+    <p class="caption mono" data-in><i class="lens-dot"></i><span data-i18n="role">Software Engineering</span></p>
+  </div>
+
+  <div class="dock-wrap" data-in>
+    <nav class="dock" aria-label="Sections">
+      <a class="dock__item" href="#works"><span class="dock__n">01</span><span class="dock__label" data-i18n="works">Works</span><svg class="dock__arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6"/></svg></a>
+      <a class="dock__item" href="#skills"><span class="dock__n">02</span><span class="dock__label" data-i18n="skills">Skills</span><svg class="dock__arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6"/></svg></a>
+      <a class="dock__item" href="#profile"><span class="dock__n">03</span><span class="dock__label" data-i18n="profile">Profile</span><svg class="dock__arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 10 10 2M4 2h6v6"/></svg></a>
+    </nav>
+  </div>
+
+  <div class="base mono" data-in>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button><span>/</span><button type="button" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+    <span>Trujillo, Peru</span>
+  </div>
+</header>
+<!-- HERO:end -->
+
+<!-- INTRO:start -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro__logo" id="intrologo"><img src="media/logo.svg" alt=""></div>
+  <span class="intro__skip mono">Tap to skip</span>
+</div>
+<!-- INTRO:end -->
+
+<main>
+<!-- PALETTE:start -->
+<section class="sheet" id="palette">
+  <div class="sheet__inner">
+    <p class="mono" style="color:var(--muted)">01 — Colours</p>
+    <h2>Black, white, and your video.</h2>
+    <p class="sheet__lead">No accent colour on purpose. The mist in the video is the only grey in the page, so your content and the background carry everything.</p>
+    <div class="swatches">
+      <div class="sw"><div class="sw__chip" style="background:#FFFFFF"></div><div class="sw__txt"><b>White</b><span class="mono">#FFFFFF</span><p>Page background, buttons on hover, the dock.</p></div></div>
+      <div class="sw"><div class="sw__chip" style="background:#0A0A0A"></div><div class="sw__txt"><b>Ink</b><span class="mono">#0A0A0A</span><p>Headlines, nav, lines, the signature, main buttons.</p></div></div>
+      <div class="sw"><div class="sw__chip" style="background:#595959"></div><div class="sw__txt"><b>Grey</b><span class="mono">#595959</span><p>Small captions and secondary text. Still easy to read on white.</p></div></div>
+      <div class="sw"><div class="sw__chip" style="background:rgba(10,10,10,.16)"></div><div class="sw__txt"><b>Hairline</b><span class="mono">Ink at 16%</span><p>Thin borders, same weight as your signature strokes.</p></div></div>
+    </div>
+  </div>
+</section>
+<!-- PALETTE:end -->
+
+<!-- TYPE:start -->
+<section class="sheet" id="letters">
+  <div class="sheet__inner type">
+    <div>
+      <p class="mono" style="color:var(--muted)">02 — Letters</p>
+      <h2>Light and large, with small technical notes.</h2>
+    </div>
+    <p class="type__big">Building Software<br>That Solves Real Problems</p>
+    <div class="type__row">
+      <span class="mono" style="color:var(--muted)">Section title</span>
+      <h3>A clean sans-serif, light weight, tight spacing — as thin as your signature.</h3>
+    </div>
+    <div class="type__row">
+      <span class="mono" style="color:var(--muted)">Small notes &amp; menu</span>
+      <p class="mono" style="font-size:13px">Software Engineering — Github — Email — Resume</p>
+      <p style="color:var(--muted)">A coding-style font for menus and captions, so a visitor feels "developer" in two seconds.</p>
+    </div>
+  </div>
+</section>
+<!-- TYPE:end -->
+
+<!-- ELEMENTS:start -->
+<section class="sheet" id="elements">
+  <div class="sheet__inner">
+    <p class="mono" style="color:var(--muted)">03 — Elements only your page has</p>
+    <h2>Everything comes from your signature.</h2>
+    <p class="sheet__lead">I took the long sweep under your name and the thin, round stroke, and made a small family out of them.</p>
+    <div class="els">
+      <div class="el">
+        <div class="el__art" style="width:100%"><svg class="swoosh" id="demoSwoosh" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true" style="margin:0;width:100%;clip-path:none"><path d="M0,37 C280,33 640,14 1000,2 C640,15.6 280,36.8 0,37 Z"/></svg></div>
+        <p><b>The sweep.</b> The long underline of your signature, drawn once under the headline as if someone wrote it.</p>
+        <button class="btn btn--ghost mono" type="button" id="replaySwoosh">See it move</button>
+      </div>
+      <div class="el">
+        <div class="el__art"><i class="lens-dot" style="width:42px;height:15px"></i></div>
+        <p><b>The leaf.</b> A tiny tilted oval, the shape of your sweep. It marks the small captions.</p>
+      </div>
+      <div class="el">
+        <div class="el__art"><span style="display:block;width:100%;height:1px;background:var(--ink)"></span></div>
+        <p><b>The hairline.</b> Borders and underlines are as thin as the strokes of your name. They draw in on hover.</p>
+      </div>
+      <div class="el">
+        <div class="el__art"><span style="display:inline-block;font-size:34px;font-weight:300;letter-spacing:-.04em;transform:translate(8px,-6px)">Works</span></div>
+        <p><b>The slant.</b> Things lift a little up and to the right when you point at them, following the angle of your writing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ELEMENTS:end -->
+
+<!-- COMPONENTS:start -->
+<section class="sheet" id="components">
+  <div class="sheet__inner">
+    <p class="mono" style="color:var(--muted)">04 — A button and a card</p>
+    <h2>Round, quiet, premium.</h2>
+    <p class="sheet__lead">Hover (or touch) to feel them.</p>
+    <div class="btnrow" style="margin-bottom:40px">
+      <a class="btn mono" href="mailto:josepatrickwackerbauer@gmail.com">Email</a>
+      <a class="btn btn--ghost mono" href="https://github.com/Patrickckckckc">GitHub</a>
+    </div>
+    <article class="card">
+      <span class="lens-dot"></span>
+      <h3><span class="ph">[PROJECT NAME]</span></h3>
+      <p><span class="ph">[PROJECT DESCRIPTION]</span></p>
+      <svg class="swoosh" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true" style="clip-path:none"><path d="M0,37 C280,33 640,14 1000,2 C640,15.6 280,36.8 0,37 Z"/></svg>
+    </article>
+  </div>
+</section>
+<!-- COMPONENTS:end -->
+</main>
+
+<footer class="foot">
+  <p style="margin:0 0 14px">Works, Skills and Profile will be minimal placeholder pages in this phase, with the same header and the same soft page transition (a quick fade with a short upward move).</p>
+  <button class="btn btn--ghost mono" type="button" id="replay">See the opening again</button>
+  <p style="margin:18px 0 0;font-size:13px">With “Reduce motion” on in your device, nothing plays by itself and the page shows complete and still.</p>
+</footer>
+<div style="padding-top:0"><span class="sheet-note">Sample sheet — not published</span></div>
+
+<script src="vendor/gsap.min.js"></script>
+<script>
+(() => {
+  'use strict';
+  const d = document, html = d.documentElement;
+  const $ = (s, c = d) => c.querySelector(s);
+  const $$ = (s, c = d) => [...c.querySelectorAll(s)];
+  const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasGSAP = typeof window.gsap !== 'undefined';
+  const safe = (fn) => { try { fn(); } catch (e) { console.warn('[sample]', e); } };
+  const M = { ease: 'power4.out', easeIO: 'power3.inOut', dur: 1.2, stagger: 0.08, dist: 28 };
+
+  /* ---- Language + resume link (the real site does the same) ---- */
+  const T = {
+    en: { github: 'GitHub', email: 'Email', resume: 'Resume', hello: "Hi, I'm Patrick Wackerbauer", w1: 'Building', w2: 'Software', w3: 'That Solves', w4: 'Real Problems', role: 'Software Engineering', works: 'Works', skills: 'Skills', profile: 'Profile', pdf: 'media/resume-en.pdf' },
+    es: { github: 'GitHub', email: 'Correo', resume: 'Currículum', hello: 'Hola, soy Patrick Wackerbauer', w1: 'Construyo', w2: 'software', w3: 'que resuelve', w4: 'problemas reales', role: 'Ingeniería de Software', works: 'Trabajos', skills: 'Habilidades', profile: 'Perfil', pdf: 'media/resume-es.pdf' },
+  };
+  const setLang = (l) => {
+    html.lang = l;
+    $$('[data-i18n]').forEach((el) => { el.textContent = T[l][el.dataset.i18n]; });
+    $('#resumeLink').href = T[l].pdf;
+    $$('[data-lang]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === l)));
+  };
+  $$('[data-lang]').forEach((b) => b.addEventListener('click', () => setLang(b.dataset.lang)));
+  if (new URLSearchParams(location.search).get('lang') === 'es') setLang('es');
+
+  /* ---- Background video: poster only when motion is reduced ---- */
+  safe(() => {
+    const v = $('#bgvideo');
+    if (RM) { v.removeAttribute('autoplay'); v.pause(); }
+    else { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+  });
+
+  if (!hasGSAP) { html.classList.remove('js'); return; }
+
+  /* ---- Opening: signature written, flies to the corner, page appears ---- */
+  let tl;
+  const run = () => {
+    const intro = $('#intro'), il = $('#intrologo'), tlogo = $('#toplogo');
+    const parts = ['.hl .w', '[data-in]', '.top__logo'];
+    html.classList.remove('ready');
+    intro.classList.remove('is-done');
+    gsap.set('.top__logo', { opacity: 0 });
+    gsap.set('.hl .w', { opacity: 0, y: M.dist });
+    gsap.set('[data-in]', { opacity: 0, y: 12 });
+    gsap.set('.hero__main .swoosh', { clipPath: 'inset(0 100% 0 0)' });
+
+    const finish = () => {
+      html.classList.add('ready');
+      intro.classList.add('is-done');
+      gsap.set(parts, { clearProps: 'all' });
+      gsap.set('.hero__main .swoosh', { clearProps: 'clipPath' });
+    };
+    if (tl) tl.kill();
+
+    if (RM) {
+      intro.classList.add('is-done');
+      gsap.set('.top__logo', { opacity: 1 });
+      gsap.set('.hl .w, [data-in]', { y: 0 });
+      gsap.set('.hero__main .swoosh', { clipPath: 'inset(0 0% 0 0)' });
+      tl = gsap.timeline({ onComplete: finish })
+        .to(['.hl .w', '[data-in]'], { opacity: 1, duration: 0.6, stagger: 0.04, ease: 'none' });
+      return;
+    }
+
+    const r = tlogo.getBoundingClientRect();
+    const vw = innerWidth, vh = innerHeight;
+    const S = Math.min(vw * 0.62, 440) / r.width;
+    gsap.set(il, { width: r.width, height: r.height, x: (vw - r.width * S) / 2, y: (vh - r.height * S) / 2 - vh * 0.03, scale: S, clipPath: 'inset(-4% 100% -4% 0)', opacity: 1 });
+    gsap.set(intro, { opacity: 1, display: 'block' });
+
+    tl = gsap.timeline({ onComplete: finish });
+    tl.to(il, { clipPath: 'inset(-4% 0% -4% 0)', duration: 1.3, ease: 'power2.inOut' }, 0.15)
+      .to(il, { x: r.left, y: r.top, scale: 1, duration: 0.85, ease: M.easeIO }, 1.65)
+      .to(intro, { opacity: 0, duration: 0.7, ease: 'none' }, 1.75)
+      .set('.top__logo', { opacity: 1 }, 2.5)
+      .to('[data-in]', { opacity: 1, y: 0, duration: 0.9, ease: M.ease, stagger: 0.07 }, 2.25)
+      .to('.hl .w', { opacity: 1, y: 0, duration: M.dur, ease: M.ease, stagger: M.stagger }, 2.2)
+      .to('.hero__main .swoosh', { clipPath: 'inset(0 0% 0 0)', duration: 1.2, ease: 'power2.inOut' }, 2.85);
+  };
+
+  safe(run);
+  const skip = () => { if (tl && tl.progress() < 1) tl.progress(1); };
+  $('#intro').addEventListener('click', skip);
+  addEventListener('keydown', (e) => { if (e.key === 'Escape' || e.key === 'Enter') skip(); });
+  setTimeout(skip, 6500);
+
+  $('#replay').addEventListener('click', () => { scrollTo({ top: 0, behavior: 'auto' }); safe(run); });
+
+  /* ---- Sweep demo ---- */
+  $('#replaySwoosh').addEventListener('click', () => {
+    const s = $('#demoSwoosh');
+    if (RM) { gsap.fromTo(s, { opacity: 0 }, { opacity: 1, duration: 0.6 }); return; }
+    gsap.fromTo(s, { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)', duration: 1.2, ease: 'power2.inOut', clearProps: 'clipPath' });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+.next
+node_modules
+public
+direccion-de-arte
+materiales
+package-lock.json
+src/components/brand/logo-path.ts
