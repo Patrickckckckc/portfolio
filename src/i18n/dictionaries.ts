@@ -73,16 +73,16 @@ export const dictionaries: Record<Language, Dictionary> = {
     profile: {
       title: "About Me",
       paragraphs: [
-        "I grew up in Trujillo, Peru, where I spent most of my life before living in Germany for a year through my family's German roots. Experiencing different cultures taught me to see the world from multiple perspectives, but honestly, one of the biggest influences on who I am today has been the internet itself. Personal development, self-education, and the idea that consistent effort can completely change your future have shaped the way I work and approach challenges.",
-        "I chose software engineering because it combines everything I value: continuous learning, problem-solving, independence, and innovation. What excites me most is turning an idea into something real. Whether it's a website, an application, or a new feature, there's something incredibly rewarding about building solutions that improve people's lives in a meaningful way.",
-        "Right now, I'm focused on strengthening my skills as a developer, building projects, and learning how to create digital experiences that are both functional and enjoyable to use. I'm especially interested in the intersection of software, AI, and product design, and I'm always looking for better ways to transform ideas into products that create positive impact.",
+        "I grew up in Trujillo, Peru, and spent a year living in Germany through my family's German roots. Experiencing different cultures taught me to see things from different perspectives, but one of the biggest influences on who I am today has been the internet itself. Personal development, self-education, and the belief that consistent effort can change your future have shaped the way I approach life and work.",
+        "What excites me most about software engineering is turning ideas into reality. I enjoy building things that solve real problems and create a positive impact, no matter how big or small.",
+        "Today, I'm focused on growing as a developer, exploring the intersection of software, AI, and design, and continuously improving my ability to turn ideas into meaningful products.",
       ],
-      exploringTitle: "exploring.txt",
+      exploringTitle: "skill-tree",
       exploringText:
-        "Recently achieved my C1 English certification and currently exploring UI/UX design, modern web development, and AI-assisted workflows. I'm fascinated by how technology is changing the way products are built and how developers can work more efficiently than ever before.",
-      afterHoursTitle: "after-hours.txt",
+        "Recently achieved my C1 English certification. Currently exploring UI/UX design, modern web development, and AI-assisted workflows.",
+      afterHoursTitle: "side-quests",
       afterHoursText:
-        "Playing video games, watching anime, discovering new music, and occasionally going down internet rabbit holes about productivity, technology, and self-improvement.",
+        "Playing video games, watching anime, discovering new music, and occasionally diving into productivity and self-improvement rabbit holes.",
       showSecondPhoto: "Show a second photo of Patrick",
       hideSecondPhoto: "Hide the second photo",
       photoDescription:
@@ -123,16 +123,16 @@ export const dictionaries: Record<Language, Dictionary> = {
     profile: {
       title: "Sobre mí",
       paragraphs: [
-        "Crecí en Trujillo, Perú, donde pasé la mayor parte de mi vida antes de vivir un año en Alemania gracias a las raíces alemanas de mi familia. Conocer distintas culturas me enseñó a ver el mundo desde varias perspectivas, pero, sinceramente, una de las mayores influencias en quien soy hoy ha sido internet. El desarrollo personal, el aprendizaje autodidacta y la idea de que el esfuerzo constante puede cambiar por completo tu futuro han moldeado mi forma de trabajar y afrontar los retos.",
-        "Elegí la ingeniería de software porque combina todo lo que valoro: aprendizaje continuo, resolución de problemas, independencia e innovación. Lo que más me entusiasma es convertir una idea en algo real. Ya sea un sitio web, una aplicación o una nueva funcionalidad, hay algo increíblemente gratificante en crear soluciones que mejoren la vida de las personas de forma significativa.",
-        "Ahora mismo, me centro en fortalecer mis habilidades como desarrollador, crear proyectos y aprender a diseñar experiencias digitales que sean funcionales y agradables. Me interesa especialmente la intersección entre el software, la IA y el diseño de productos, y siempre busco mejores formas de transformar ideas en productos que generen un impacto positivo.",
+        "Crecí en Trujillo, Perú, y viví un año en Alemania gracias a las raíces alemanas de mi familia. Conocer distintas culturas me enseñó a ver las cosas desde diferentes perspectivas, pero una de las mayores influencias en quien soy hoy ha sido internet. El desarrollo personal, el aprendizaje autodidacta y la convicción de que el esfuerzo constante puede cambiar tu futuro han moldeado mi forma de afrontar la vida y el trabajo.",
+        "Lo que más me entusiasma de la ingeniería de software es convertir ideas en realidad. Disfruto creando cosas que resuelven problemas reales y generan un impacto positivo, sin importar su tamaño.",
+        "Hoy me enfoco en crecer como desarrollador, explorar la intersección entre el software, la IA y el diseño, y mejorar continuamente mi capacidad para convertir ideas en productos significativos.",
       ],
-      exploringTitle: "exploring.txt",
+      exploringTitle: "skill-tree",
       exploringText:
-        "Hace poco obtuve la certificación C1 de inglés y actualmente estoy explorando el diseño UI/UX, el desarrollo web moderno y los flujos de trabajo asistidos por IA. Me fascina cómo la tecnología está cambiando la forma de crear productos y cómo los desarrolladores pueden trabajar con más eficiencia que nunca.",
-      afterHoursTitle: "after-hours.txt",
+        "Hace poco obtuve la certificación C1 de inglés. Actualmente exploro el diseño UI/UX, el desarrollo web moderno y los flujos de trabajo asistidos por IA.",
+      afterHoursTitle: "side-quests",
       afterHoursText:
-        "Jugar videojuegos, ver anime, descubrir música nueva y, de vez en cuando, perderme en rincones de internet sobre productividad, tecnología y desarrollo personal.",
+        "Jugar videojuegos, ver anime, descubrir música nueva y, de vez en cuando, perderme en búsquedas sobre productividad y desarrollo personal.",
       showSecondPhoto: "Mostrar una segunda foto de Patrick",
       hideSecondPhoto: "Ocultar la segunda foto",
       photoDescription:

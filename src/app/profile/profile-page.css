@@ -5,33 +5,6 @@
   min-height: max(100svh, 740px);
   align-items: center;
   padding: clamp(132px, 17vh, 168px) var(--gutter) clamp(96px, 12vh, 128px);
-  background-color: var(--background);
-}
-
-.profile-page::before {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  background-image:
-    linear-gradient(
-      color-mix(in srgb, var(--foreground) 5%, transparent) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      color-mix(in srgb, var(--foreground) 5%, transparent) 1px,
-      transparent 1px
-    );
-  background-size: 32px 32px;
-  content: "";
-  mask-image: linear-gradient(
-    to bottom,
-    transparent,
-    #000 12%,
-    #000 88%,
-    transparent
-  );
-  pointer-events: none;
 }
 
 .profile-grid {
