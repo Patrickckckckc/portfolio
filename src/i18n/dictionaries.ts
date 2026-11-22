@@ -25,6 +25,32 @@ export interface Dictionary {
     "works" | "skills" | "profile",
     { label: string; placeholder: string }
   >;
+  skillsPage: {
+    subtitle: string;
+    coreTechnologies: string;
+    categories: {
+      frontend: string;
+      backend: string;
+      mobile: string;
+    };
+    technologies: {
+      frontend: readonly string[];
+      backend: readonly string[];
+      mobile: readonly string[];
+    };
+    additionalKnowledgeTitle: string;
+    additionalKnowledge: readonly string[];
+    languagesTitle: string;
+    languages: readonly string[];
+  };
+  worksPage: {
+    description: string;
+    featuredTitle: string;
+    featuredImageAlt: string;
+    mobileApp: string;
+    building: string;
+    upcoming: string;
+  };
   profile: {
     title: string;
     paragraphs: readonly [string, string, string];
@@ -69,6 +95,48 @@ export const dictionaries: Record<Language, Dictionary> = {
         label: "Profile",
         placeholder: "A short profile will live here.",
       },
+    },
+    skillsPage: {
+      subtitle: "Technologies, tools, and programming languages I use.",
+      coreTechnologies: "Core Technologies",
+      categories: {
+        frontend: "Frontend",
+        backend: "Backend",
+        mobile: "Mobile",
+      },
+      technologies: {
+        frontend: [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "HTML5",
+          "CSS3",
+          "Tailwind CSS",
+        ],
+        backend: ["Node.js", "Express.js", "REST APIs"],
+        mobile: ["React Native", "Expo", "Expo Notifications"],
+      },
+      additionalKnowledgeTitle: "Additional Knowledge",
+      additionalKnowledge: [
+        "C (CS50)",
+        "C++ (Academic Experience)",
+        "Python",
+        "SQL",
+        "SQLite",
+        "Git",
+        "GitHub",
+      ],
+      languagesTitle: "Languages",
+      languages: ["Spanish (Native)", "English (C1)", "German (B1)"],
+    },
+    worksPage: {
+      description: "Selected software projects by Patrick Wackerbauer.",
+      featuredTitle: "It's Ok",
+      featuredImageAlt:
+        "It's Ok — supportive messages when you need them most.",
+      mobileApp: "Mobile App",
+      building: "Building",
+      upcoming: "Upcoming...",
     },
     profile: {
       title: "About Me",
@@ -119,6 +187,48 @@ export const dictionaries: Record<Language, Dictionary> = {
         placeholder: "Aquí vivirán las herramientas y tecnologías.",
       },
       profile: { label: "Perfil", placeholder: "Aquí vivirá un perfil breve." },
+    },
+    skillsPage: {
+      subtitle:
+        "Tecnologías, herramientas y lenguajes de programación que uso.",
+      coreTechnologies: "Tecnologías Principales",
+      categories: {
+        frontend: "Frontend",
+        backend: "Backend",
+        mobile: "Móvil",
+      },
+      technologies: {
+        frontend: [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "HTML5",
+          "CSS3",
+          "Tailwind CSS",
+        ],
+        backend: ["Node.js", "Express.js", "REST APIs"],
+        mobile: ["React Native", "Expo", "Expo Notifications"],
+      },
+      additionalKnowledgeTitle: "Conocimientos Adicionales",
+      additionalKnowledge: [
+        "C (CS50)",
+        "C++ (Experiencia Académica)",
+        "Python",
+        "SQL",
+        "SQLite",
+        "Git",
+        "GitHub",
+      ],
+      languagesTitle: "Idiomas",
+      languages: ["Español (Nativo)", "Inglés (C1)", "Alemán (B1)"],
+    },
+    worksPage: {
+      description: "Proyectos de software destacados de Patrick Wackerbauer.",
+      featuredTitle: "It's Ok",
+      featuredImageAlt: "It's Ok: mensajes de apoyo cuando más los necesitas.",
+      mobileApp: "Aplicación Móvil",
+      building: "En Desarrollo",
+      upcoming: "Próximamente...",
     },
     profile: {
       title: "Sobre mí",

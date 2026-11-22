@@ -113,7 +113,7 @@
 
 @media (min-width: 1280px) {
   .works-page {
-    padding-top: clamp(136px, calc(5.6vw + 64px), 146px);
+    padding-top: clamp(166px, calc(5.6vw + 94px), 176px);
   }
 }
 
