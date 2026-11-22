@@ -31,10 +31,8 @@ export function SkillsContent() {
   return (
     <section className="skills-page" aria-labelledby="skills-title">
       <header className="skills-hero">
-        <h1 id="skills-title" className="skills-title">
-          {t.sections.skills.label}
-        </h1>
-        <p className="skills-subtitle">{t.skillsPage.subtitle}</p>
+        <h1 id="skills-title" className="skills-title"></h1>
+        <p className="skills-subtitle"></p>
       </header>
 
       <div className="skills-content">
