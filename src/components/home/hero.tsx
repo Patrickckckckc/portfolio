@@ -18,7 +18,7 @@ export function Hero() {
       <BackgroundVideo />
       <div aria-hidden="true" className="hero-veil absolute inset-0 -z-10" />
 
-      <div className="flex flex-1 flex-col justify-center px-(--gutter) pt-28 pb-[clamp(100px,16vh,170px)]">
+      <div className="flex flex-col justify-center px-(--gutter) pt-[clamp(7rem,14vh,10rem)] pb-[clamp(100px,16vh,170px)] 2xl:pt-[calc(clamp(7rem,14vh,10rem)_+_16px)]">
         <p data-intro className={`${eyebrow} mb-[clamp(14px,2.2vw,28px)]`}>
           <LeafDot />
           <span>{t.hero.greeting}</span>

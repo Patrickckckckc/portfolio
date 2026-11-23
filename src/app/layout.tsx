@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Inter_Tight } from "next/font/google";
 import { cookies } from "next/headers";
@@ -101,6 +102,7 @@ export default async function RootLayout({
             </div>
           </LanguageProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
