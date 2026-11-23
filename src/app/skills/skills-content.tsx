@@ -30,11 +30,6 @@ export function SkillsContent() {
 
   return (
     <section className="skills-page" aria-labelledby="skills-title">
-      <header className="skills-hero">
-        <h1 id="skills-title" className="skills-title"></h1>
-        <p className="skills-subtitle"></p>
-      </header>
-
       <div className="skills-content">
         <section className="skills-section" aria-labelledby="core-title">
           <div className="skills-section-heading">

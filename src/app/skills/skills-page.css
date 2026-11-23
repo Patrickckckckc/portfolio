@@ -1,13 +1,28 @@
 .skills-page {
   position: relative;
   isolation: isolate;
-  padding: clamp(104px, 10vh, 128px) var(--gutter) 88px;
+  --skills-page-bottom-padding: 88px;
+  --skills-content-gap: calc(
+    var(--skills-page-bottom-padding) - clamp(44px, 6vh, 56px)
+  );
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+  padding: calc(
+      clamp(14px, 2.2vw, 28px) + clamp(60px, 5.6vw, 82px) +
+        var(--skills-content-gap)
+    )
+    var(--gutter) var(--skills-page-bottom-padding);
 }
 
 .skills-hero,
 .skills-content {
   width: min(100%, 1120px);
   margin-inline: auto;
+}
+
+.skills-content {
+  margin-block: auto;
 }
 
 .skills-hero {
@@ -102,8 +117,7 @@
 
 @media (max-width: 720px) {
   .skills-page {
-    padding-top: 104px;
-    padding-bottom: 80px;
+    --skills-page-bottom-padding: 80px;
   }
 
   .skills-section {
