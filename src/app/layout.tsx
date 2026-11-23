@@ -61,7 +61,7 @@ export const viewport: Viewport = {
  * once per session, with motion allowed. Otherwise nothing is hidden.
  * The timeout is a safety net in case the animation code never loads.
  */
-const introGuard = `(function(){try{var d=document.documentElement;d.classList.add("js");if(location.pathname!=="/"||matchMedia("(prefers-reduced-motion: reduce)").matches||sessionStorage.getItem("intro-seen"))return;d.classList.add("intro-pending");setTimeout(function(){d.classList.remove("intro-pending")},6500)}catch(e){}})()`;
+const introGuard = `(function(){try{var d=document.documentElement;d.classList.add("js");if((location.pathname!=="/"&&location.pathname!=="/en"&&location.pathname!=="/es")||matchMedia("(prefers-reduced-motion: reduce)").matches||sessionStorage.getItem("intro-seen"))return;d.classList.add("intro-pending");setTimeout(function(){d.classList.remove("intro-pending")},6500)}catch(e){}})()`;
 
 export default async function RootLayout({
   children,
