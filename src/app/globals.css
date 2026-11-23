@@ -95,14 +95,14 @@
 
 /* Headline scale: 4 lines on phones, 3 on tablets, 2 on desktop. Spanish runs longer. */
 html[lang="es"] {
-  --h1: 11vw;
+  --h1: 11.4vw;
 }
 @media (min-width: 600px) {
   :root {
     --h1: 11vw;
   }
   html[lang="es"] {
-    --h1: 9.8vw;
+    --h1: 10.7vw;
   }
 }
 @media (min-width: 1024px) {
@@ -110,7 +110,7 @@ html[lang="es"] {
     --h1: min(8vw, 200px);
   }
   html[lang="es"] {
-    --h1: min(6.6vw, 168px);
+    --h1: min(7.1vw, 188px);
   }
 }
 

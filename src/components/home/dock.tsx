@@ -12,7 +12,7 @@ export function Dock() {
   return (
     <div
       data-intro
-      className="pointer-events-none absolute inset-x-0 bottom-[clamp(54px,7vh,74px)] z-20 flex justify-center px-(--gutter)"
+      className="pointer-events-none absolute inset-x-0 bottom-[clamp(54px,7vh,74px)] z-20 flex justify-center px-(--gutter) min-[1210px]:justify-end"
     >
       <nav
         aria-label={t.hero.sectionsLabel}
